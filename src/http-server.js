@@ -40,8 +40,8 @@ app.post('/mcp', async (req, res) => {
   }
 });
 
-const server = app.listen(PORT, () => {
-  console.log(`🚀 MCP HTTP server listening on http://localhost:${PORT}/mcp`);
+const server = app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 MCP HTTP server listening on 0.0.0.0:${PORT}/mcp`);
 });
 
 const shutdown = () => {
