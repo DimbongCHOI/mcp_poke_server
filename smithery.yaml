@@ -1,2 +1,36 @@
-name: pokemon-mcp-server
-entrypoint: src/server.js
+name: "@DimbongCHOI/mcp_poke_ver2"
+version: "1.0.0"
+description: "포켓몬 정보를 조회하고 검색할 수 있는 MCP 서버"
+author: "DimbongCHOI"
+license: "MIT"
+categories:
+  - "utilities"
+  - "pokemon"
+icon: "🎮"
+homepage: "https://github.com/DimbongCHOI/mcp_poke_ver2"
+repository: "https://github.com/DimbongCHOI/mcp_poke_ver2"
+
+runtime: "nodejs18"
+
+startCommand:
+  type: stdio
+  commandFunction: |
+    (config) => ({
+      command: "node",
+      args: ["src/server.js"],
+      env: {
+        NODE_ENV: "production"
+      }
+    })
+
+capabilities:
+  tools: true
+  resources: false
+  prompts: false
+
+configSchema:
+  type: object
+  properties: {}
+  required: []
+
+exampleConfig: {}
