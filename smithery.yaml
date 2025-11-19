@@ -1,4 +1,2 @@
 name: pokemon-mcp-server
 entrypoint: src/server.js
-env:
-  NODE_ENV: production
