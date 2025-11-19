@@ -26,13 +26,17 @@ app.post('/mcp', async (req, res) => {
   } catch (error) {
     console.error('Failed to handle MCP request:', error);
     if (!res.headersSent) {
-      res.status(500).json({
-        jsonrpc: '2.0',
-        error: {
-          code: -32603,
-          message: 'Internal MCP server error',
-        },
-      });
+      res
+        .writeHead(500, { 'Content-Type': 'application/json' })
+        .end(
+          JSON.stringify({
+            jsonrpc: '2.0',
+            error: {
+              code: -32603,
+              message: 'Internal MCP server error',
+            },
+          })
+        );
     }
   }
 });
