@@ -1,0 +1,26 @@
+name: "@DimbongCHOI/mcp_poke_ver2"
+version: "1.0.0"
+description: "포켓몬 정보를 조회하고 검색할 수 있는 MCP 서버"
+categories:
+  - "utilities"
+  - "pokemon"
+icon: "🎮"
+homepage: "https://github.com/DimbongCHOI/mcp_poke_ver2"
+source: "https://github.com/DimbongCHOI/mcp_poke_ver2"
+
+startCommand:
+  type: stdio
+  commandFunction: |
+    (config) => ({
+      command: "node",
+      args: ["src/server.js"],
+      env: {
+        NODE_ENV: "production"
+      }
+    })
+
+configSchema:
+  type: object
+  properties: {}
+
+exampleConfig: {}

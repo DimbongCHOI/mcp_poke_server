@@ -1,0 +1,21 @@
+{
+  "name": "pokemon-mcp-server",
+  "version": "1.0.0",
+  "description": "포켓몬 정보를 제공하는 MCP 서버 및 챗봇 백엔드",
+  "type": "module",
+  "scripts": {
+    "server": "node src/server.js",
+    "cli": "node src/index.js",
+    "web-server": "node src/web-server.js",
+    "dev": "node --watch src/index.js",
+    "test": "node src/test.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "axios": "^1.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "license": "MIT"
+}
+
