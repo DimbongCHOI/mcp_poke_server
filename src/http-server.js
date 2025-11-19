@@ -7,15 +7,13 @@ import { HttpSingleRequestTransport } from './transports/http-transport.js';
 const PORT = process.env.PORT || 8787;
 
 const app = express();
-app.use(express.json({ limit: '4mb' }));
-
 app.get('/health', (_req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
 app.post('/mcp', async (req, res) => {
   try {
-    console.log('🔔 Incoming MCP request:', JSON.stringify(req.body));
+    console.log('🔔 Incoming MCP request headers:', req.headers);
     const mcpServer = new PokemonMCPServer();
     const transport = new HttpSingleRequestTransport(req, res);
 
