@@ -1,4 +1,4 @@
-name: "@DimbongCHOI/mcp_poke_ver2"
+name: "@DimbongCHOI/mcp_poke_server"
 version: "1.0.0"
 description: "포켓몬 정보를 조회하고 검색할 수 있는 MCP 서버"
 author: "DimbongCHOI"
@@ -7,8 +7,8 @@ categories:
   - "utilities"
   - "pokemon"
 icon: "🎮"
-homepage: "https://github.com/DimbongCHOI/mcp_poke_ver2"
-repository: "https://github.com/DimbongCHOI/mcp_poke_ver2"
+homepage: "https://github.com/DimbongCHOI/mcp_poke_server"
+repository: "https://github.com/DimbongCHOI/mcp_poke_server"
 
 runtime: "container"
 
