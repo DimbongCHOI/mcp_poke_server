@@ -15,6 +15,7 @@ app.get('/health', (_req, res) => {
 
 app.post('/mcp', async (req, res) => {
   try {
+    console.log('🔔 Incoming MCP request:', JSON.stringify(req.body));
     const mcpServer = new PokemonMCPServer();
     const transport = new HttpSingleRequestTransport(req, res);
 
