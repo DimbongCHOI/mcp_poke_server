@@ -15,6 +15,20 @@ app.get('/health', (_req, res) => {
 
 app.post('/mcp', async (req, res) => {
   try {
+    const apiKey =
+      req.query.api_key ||
+      req.headers['x-api-key'] ||
+      req.headers.authorization?.replace('Bearer ', '');
+    if (!apiKey) {
+      return res.status(401).json({
+        jsonrpc: '2.0',
+        error: {
+          code: -32600,
+          message: 'Missing api_key',
+        },
+      });
+    }
+
     const mcpServer = new PokemonMCPServer();
     const transport = new HttpSingleRequestTransport(req, res);
 
