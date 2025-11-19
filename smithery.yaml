@@ -10,27 +10,20 @@ icon: "🎮"
 homepage: "https://github.com/DimbongCHOI/mcp_poke_ver2"
 repository: "https://github.com/DimbongCHOI/mcp_poke_ver2"
 
-runtime: "nodejs18"
+runtime: "container"
 
 startCommand:
-  type: stdio
-  commandFunction: |
-    (config) => ({
-      command: "node",
-      args: ["src/server.js"],
-      env: {
-        NODE_ENV: "production"
-      }
-    })
+  type: "http"
+  configSchema:
+    type: "object"
+    properties: {}
+    required: []
+  exampleConfig: {}
 
-capabilities:
-  tools: true
-  resources: false
-  prompts: false
+build:
+  dockerfile: "Dockerfile"
+  dockerBuildPath: "."
 
-configSchema:
-  type: object
-  properties: {}
-  required: []
-
-exampleConfig: {}
+env:
+  NODE_ENV: "production"
+  PORT: "8787"

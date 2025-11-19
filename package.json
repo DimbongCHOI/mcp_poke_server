@@ -4,7 +4,8 @@
   "description": "포켓몬 정보를 제공하는 MCP 서버 및 챗봇 백엔드",
   "type": "module",
   "scripts": {
-    "server": "node src/server.js",
+    "server:stdio": "node src/stdio-server.js",
+    "server:http": "node src/http-server.js",
     "cli": "node src/index.js",
     "web-server": "node src/web-server.js",
     "dev": "node --watch src/index.js",

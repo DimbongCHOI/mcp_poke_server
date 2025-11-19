@@ -341,3 +341,5 @@ ${statsDetail}
 const server = new PokemonMCPServer();
 server.run().catch(console.error);
 
+export default PokemonMCPServer;
+
